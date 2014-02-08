@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>MetRxn Home</title>
+
+<link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+<link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+<link href="js/jquery-ui-1.8.21.custom/css/custom-theme/jquery-ui-1.9.2.custom.css" rel="stylesheet">
+<link href="css/master.css" rel="stylesheet">
+<link href="css/uploader.css" rel="stylesheet">
+</head>
+
+<body>
+	<div class="container">
+		<div class="masthead">
+			<div class="rowfluid">
+				<img src="images/logo.jpg" class=" span12 img-rounded">
+			</div>
+			<div class = "divider">
+			</div>
+			<div class="rowfluid">
+				<ul class="nav nav-pills menu">
+					<li class="span2 active"><a href="/MetRxn-service/index.html">Home</a></li>
+					<li class="span2"><a href="#">Browse</a></li>
+					<li class="span2"><a href="#">Documentation</a></li>
+					<li class="span2"><a href="/MetRxn-service/workFlow.html">Uploader</a></li>					
+					<li id = "sessionMenu" class="span2"><a href="/MetRxn-service/login.html">Log in <i class="icon-user"></i></a></li>
+				</ul>
+			</div>
+			<!-- /.navbar -->
+		</div>
+		
+		<div class="messages"> <!--  all alerts related to the page goes here!! --> </div>
+		<div class="jumbotron">
+                        <div class="input-append">
+                                <input class="span3" id="appendedInputButtons" type="text">
+								<div class = "btn-group">
+								<select class = "span1" id = "" > <option>Metabolite</option><option>Enzyme</option>
+								</select>
+								<!--button class="btn dropdown-toggle" data-toggle="dropdown">Action<span class="caret"></span></button>
+								<ul class="dropdown-menu">
+								<li>Metabolite</li>
+								</ul -->             
+								</div>								
+                                <button id = "searchBtn" class="btn" type="button">
+                                        <i class="icon-search"> </i>
+                                </button>
+                        </div>
+                </div>
+		<div id="homeContents">
+			<h3>Welcome to MetRxn (Last updated on 2012-09-28)</h3>
+			<p class="lead">MetRxn is a comprehensive collection of
+				consistent metabolite and reaction entities for use in metabolic
+				analysis and model construction. MetRxn's current 44783 uniquely
+				resolved metabolites and 35473 uniquely resolved reactions
+				incorporates data from 8 different metabolic databases and 90
+				genome-scale metabolic models.</p>
+		</div>
+		<div id="searchResults" style="display: none">
+			<div id = "imgDiv"></div>
+			<div id = "searchResultsOne">
+			<table id = "resultsTableOne" class="table table-striped table-bordered">
+				<thead>
+					
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
+			<div class="pagination" id = "resultsSummaryOne">
+			<ul>
+				<li><a id = "prevOne" href="#">Prev</a></li>
+				<li><a href="#"><span id = "currentpageNumberOne"></span></a></li>
+				<li><a id = "nextOne" href="#">Next</a></li>
+			</ul>
+			</div>
+			</div>
+			<div id = "searchResultsTwo">
+			<table id = "resultsTableTwo" class="table table-striped table-bordered">
+				<thead>
+					
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
+			<div class="pagination" id = "resultsSummaryTwo" >
+			<ul>
+				<li><a id = "prevTwo" href="#">Prev</a></li>
+				<li><a href="#"><span id = "currentpageNumberTwo" ></span></a></li>
+				<li><a id = "nextTwo" href="#">Next</a></li>
+			</ul>
+			</div>
+			</div>
+			<div id = "searchResultsThree">
+			<table id = "resultsTableThree" class="table table-striped table-bordered">
+				<thead>
+					
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
+			<div class="pagination" id = "resultsSummaryThree" >
+			<ul>
+				<li><a id = "prevThree" href="#">Prev</a></li>
+				<li><a href="#"><span id = "currentpageNumberThree" ></span></a></li>
+				<li><a id = "nextThree" href="#">Next</a></li>
+			</ul>
+			</div>
+			</div>
+		</div>
+			
+		
+	</div>
+	<!-- /container -->
+	<div class="footer">
+		<hr />
+		<p>&copy; PSU</p>
+	</div>
+	<!--  TODO : Download and save a local copy of the file. --->
+		
+		<script type="text/javascript" src="js/jquery-1.8.3.js"></script>
+        <script type="text/javascript" src="js/jquery-ui-1.9.2.js"></script>
+        <script type="text/javascript" src="js/autocomplete.js"></script>
+		<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="bootstrap/assets/js/jquery.js"></script>
+        <script type="text/javascript" src="js/bootbox.min.js"></script>
+        <script type="text/javascript" src="js/jquery-ui-1.8.21.custom/development-bundle/ui/jquery.effects.core.js"></script>
+        <script type="text/javascript" src="js/jquery-ui-1.8.21.custom/development-bundle/ui/jquery.effects.fade.js"></script>
+        <script type="text/javascript" src="js/moment-1.6.2.min.js"></script>
+		<script type="text/javascript" src="js/jquery-1.8.3.js"></script>
+        <script type="text/javascript" src="js/jquery-ui-1.9.2.js"></script>
+		<script type="text/javascript" src="js/cookie.js"></script>
+		<script type="text/javascript" src="js/alert.js"></script>
+		<script type="text/javascript" src="js/logout.js"></script>
+		<script type="text/javascript" src="js/images.js"></script>
+        <script type="text/javascript" src="js/pagination.js"></script>
+		<script type="text/javascript" src="js/metaInfoProcessor.js"></script>
+        <script type="text/javascript" src="js/results.js"></script>
+		<script type="text/javascript" src="js/queries.js"></script>
+		
+        
+		
+</body>
+</html>

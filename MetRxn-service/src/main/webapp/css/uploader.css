@@ -1,0 +1,35 @@
+/** uploader.html **/
+.updateContainer {
+	text-align:center;
+}
+
+#resultsTableOne td:hover {
+    cursor: pointer;
+}
+
+.table-bordered th, .table-bordered td {
+	border-left : none;
+	border-bottom : none;
+	border-top : none;
+	border-right : none;
+	text-align : center;
+}
+
+.table-bordered {
+	border-style: solid none;
+}
+
+/** active cell selector **/
+.table-bordered .update {
+	border:1px solid green;
+	background-color: #DFF0D8;
+}
+
+.table-bordered .nonZeroClass{
+	border:1px solid blue;
+	background-color: #FCF8E3;
+}
+
+.success {
+	background-color: #DFF0D8;
+}

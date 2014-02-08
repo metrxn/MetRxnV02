@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>MetRxn - Uploader</title>
+<link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+<link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+<link href="js/jquery-ui-1.8.21.custom/css/custom-theme/jquery-ui-1.9.2.custom.css" rel="stylesheet">
+<link href="css/master.css" rel="stylesheet">
+<link href="css/uploader.css" rel="stylesheet">
+</head>
+<body>
+	<div class="container">
+		<div class="masthead">
+			<div class="rowfluid">
+				<img src="images/logo.jpg" class=" span12 img-rounded">
+			</div>
+			<div class = "divider">
+			</div>
+			<div class="rowfluid">
+				<ul class="nav nav-pills menu">
+					<li class="span2"><a href="/MetRxn-service/index.html">Home</a></li>
+					<li class="span2"><a href="#">Browse</a></li>
+					<li class="span2"><a href="#">Documentation</a></li>
+					<li class="span2 active"><a href="/MetRxn-service/workFlow.html">Uploader</a></li>					
+					<li id = "sessionMenu" class="span2"><a href="/MetRxn-service/login.html">Log in <i class="icon-user"></i></a></li>
+				</ul>
+			</div>
+			<!-- /.navbar -->
+		</div>
+		<div class="workflow">
+			<ul class="breadcrumb">
+				<li class="active" id = "step1" >Upload<span class="divider"><i class= "icon-chevron-right"></i></span></li> 
+				<li id = "step2"> Map columns <span class="divider"><i class= "icon-chevron-right"></i></span></li> 
+				<li id = "step3" >Meta Information<i class= "icon-chevron-right"></i></li>
+			</ul>
+		</div>
+		<br/>
+		<div class="notifications"> </div>
+		<div id="stepOneContents">
+			<form enctype="multipart/form-data">
+				
+				<p> <input type="file" id = "fileContent" name="file" size="45" /> 
+					<select id="fileType" style = "margin-bottom:0;" class = "span1" >
+						<option value = "sbml">SBML</option>
+						<option value = "csv">CSV</option>
+					</select>
+					<select id="entityType" class = "span1" style = "margin-bottom:0;display:none;" >
+						<option value = "METABOLITE">Metabolite</option>
+						<option value = "REACTION" >Reaction</option>
+					</select>
+				</p>
+				<p> <button class = "btn btn-primary"  onClick="return uploadFile();"> Upload File </button> </p>
+			</form>
+		</div>
+		<div id = "stepTwoContentsSBML" style="display: none">
+			<table id = "SBMLResultsTable" class = "table table-hover"></table>
+		</div>
+		<div id="stepTwoContents" style="display: none">
+			<div id = "searchResultsOne" class = "span6">
+			<table id = "resultsTableOne" class="table table-hover table-bordered">
+			</table>
+			<input type="button" value="Update Mapping"   onClick="return saveMapping();"/> 
+			</div>
+		</div>
+			
+		
+	</div>
+	<!-- /container -->
+	<!-- confirmation dialog for SBML -->
+	<div id="dialog-confirm" style="display: none;" title="SBML Upload Summary">
+	<div id ="sbmlFileContents"> 
+		<table id = "sbmlFileCount">
+			<tr><td>Reaction count:</td><td><span id = "rxnCnt">15</span></td></tr>
+			<tr><td>Metabolite count</td><td><span id = "metaboliteCnt">25</span></td></tr>
+			<tr><td>Compartment Types:</td><td><span id = "compartmentCnt">30</span></td></tr>
+		</table>
+	</div>
+	</div>
+<!-- confirmation dialog ends here!! -->
+	<!-- modal pop up -->
+	<div id ="modalForm" style="display: none;">
+		<div id ="alertUser"><span id = "informationSpan" class="success"> </span></div>
+		<form >
+		<table style = "align:center"> 
+		<tr><td>Physical Property</td><td><input type  = "input" id = "PP" name = "PP" /></td></tr>
+		<tr><td>Physical Property Source</td><td><input type  = "input" id = "PPSource" name = "PPSource"/></td></tr>
+		<tr><td>pH Value</td><td><input type  = "input" id = "PPpH" name = "PPpH" /></td></tr>
+		<tr><td>External Id Source </td><td><input type  = "input" id = "externalIdSource" name = "externalIdSource" /></td></tr>
+		<tr><td>Split Symbol</td><td><input type  = "input" id = "splitSymbol" name = "splitSymbol" /></td></tr>
+		<tr><td colspan=2 ><input type = "button" onClick = "return updateMetaInformation();" value = "Update Meta Data"/></td></tr>
+		</table>		
+		</form>
+		<div id = "fileColumnContents" ></div>
+	</div>
+	<!-- modal pop up contents ends -->
+	<div class="footer">
+		<p>&copy; PSU</p>
+	</div>
+	
+	<script type="text/javascript" src="js/jquery-1.8.3.js"></script>
+	<script type="text/javascript" src="js/pagination.js"></script>
+	<script type="text/javascript" src="js/cookie.js"></script>
+	<script type="text/javascript" src="js/alert.js"></script>
+	<script type="text/javascript" src="js/logout.js"></script>
+	<script type="text/javascript" src="js/workflow.js"></script>
+	<script type="text/javascript" src="js/metaInfoProcessor.js"></script>
+	<script type="text/javascript" src="js/results.js"></script>
+	<script type="text/javascript" src="js/queries.js"></script>
+	<script type="text/javascript" src="js/jquery-1.8.3.js"></script>
+	<script type="text/javascript" src="js/jquery-ui-1.9.2.js"></script>
+	<script type="text/javascript" src="js/bootbox.min.js"></script>
+	<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/jquery-ui-1.8.21.custom/development-bundle/ui/jquery.effects.core.js"></script>
+	<script type="text/javascript" src="js/jquery-ui-1.8.21.custom/development-bundle/ui/jquery.effects.fade.js"></script>
+	<script type="text/javascript" src="js/moment-1.6.2.min.js"></script>
+
+</body>
+</html>
