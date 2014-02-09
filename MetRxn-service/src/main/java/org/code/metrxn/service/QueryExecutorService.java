@@ -45,8 +45,8 @@ public class QueryExecutorService {
 	@Path("/results")
 	public String getPaginatedResults(@FormParam("sessionId")String sessionId, @FormParam("pageNumber") String pageNumber, 
 			@FormParam("sortCol") String sortCol,  @FormParam("sortOrder") String sortOrder, @FormParam("queryString") String searchString) throws IOException, SQLException {
-		if(!sessionRepository.isValidSession(sessionId))
-			return JsonUtil.toJsonForObject(new ViewResource(null, -1,-1, null)).toString();
+		/*if(!sessionRepository.isValidSession(sessionId))
+			return JsonUtil.toJsonForObject(new ViewResource(null, -1,-1, null)).toString();*/
 		int reqPgNo = Integer.parseInt(pageNumber);
 		SearchCriteria searchCriteria = new SearchCriteria();
 		searchCriteria.setSearchString(searchString);

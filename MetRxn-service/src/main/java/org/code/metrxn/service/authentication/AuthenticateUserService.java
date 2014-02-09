@@ -23,19 +23,9 @@ import org.elasticsearch.common.UUID;
 @Path("/authenticate")
 public class AuthenticateUserService {
 
-	UserRepository userRepository;
+	UserRepository userRepository = new UserRepository();
 
-	SessionRepository sessionRepository;
-	
-	public AuthenticateUserService(){
-		userRepository = new UserRepository();
-		sessionRepository = new SessionRepository();
-	}
-	
-	public AuthenticateUserService(UserRepository userRepository, SessionRepository sessionRepository){
-		this.sessionRepository = sessionRepository;
-		this.userRepository = userRepository;
-	}
+	SessionRepository sessionRepository = new SessionRepository();
 
 	@POST
 	@Path("/login")
