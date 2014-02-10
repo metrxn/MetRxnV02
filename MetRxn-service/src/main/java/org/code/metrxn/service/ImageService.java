@@ -41,8 +41,8 @@ public class ImageService {
 	@Produces(MediaType.APPLICATION_JSON)
 	public String getImage(@FormParam("inputSQL") String inputSQL, @FormParam("sessionId") String sessionId) throws IOException {
 		ImageResource imageResource = new ImageResource(null, null);
-		if (!sessionRepository.isValidSession(sessionId))
-			return JsonUtil.toJsonForObject(imageResource).toString();
+		/*if (!sessionRepository.isValidSession(sessionId))
+			return JsonUtil.toJsonForObject(imageResource).toString();*/
 		imageResource.setSessionId(sessionId);
 		Image image = imageRepository.getImageByName(inputSQL);
 		ByteArrayOutputStream bos = new ByteArrayOutputStream();
